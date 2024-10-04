@@ -1,5 +1,7 @@
 package lotto;
 
+import lotto.Exception.Validation;
+import lotto.Model.Lotto;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

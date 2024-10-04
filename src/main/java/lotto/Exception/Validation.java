@@ -1,17 +1,21 @@
-package lotto;
+package lotto.Exception;
+
+import lotto.Model.Lotto;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 /*
- * IO Class
+ * Validation Class
  * 1. Input의 검증 관리
  * 2. Lotto 객체 생성시 검증 관리
  * */
 public class Validation {
+    private static final int AMOUNT_UNIT = 1000;
+
     public static void inputAmount(int input){
-        if (input < 1000 || input % 1000 != 0) {
+        if (input < AMOUNT_UNIT || input % AMOUNT_UNIT != 0) {
             throw new IllegalArgumentException("[ERROR] 구입금액은 1000원 단위로 입력해주세요.");
         }
     }
@@ -21,11 +25,11 @@ public class Validation {
             Validation.lottoNumberRange(integer);
         }
         if (numbers.size() != 6) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("올바른 숫자 6개를 입력해주세요.");
         }
         Set<Integer> set = new HashSet<>(numbers);
         if (numbers.size() != set.size()) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("올바른 숫자 6개를 입력해주세요.");
         }
     }
 
